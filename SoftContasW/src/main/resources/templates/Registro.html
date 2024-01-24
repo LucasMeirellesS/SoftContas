@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> \
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainConteiner" class="conteinerCentral">
+        <div class="conteinerCentral">
+            <h2>Registrar Contas</h2>
+            <h4>Escolha o tipo de conta:</h4>
+            <div class="conteinerCentral">
+                <button id="ativo">Ativo</button>
+                <button id="passivo">Passivo</button>
+                <button id="patrimonio">Património Líquido</button>
+                <button id="resultado">Resultado</button>
+                <button id="voltar">Voltar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:src="@{/js/RegistroS.js}"></script>
+</html>

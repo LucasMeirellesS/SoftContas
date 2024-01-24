@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  } 
+
+body {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    background-color: #02013d;
+}
+
+#mainConteiner{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.conteinerCentral {
+    background-color: #ccc;
+    display: grid;
+    border: 20px;
+    align-items: center;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 10px;
+    border: 5px solid #ccc;
+}
+
+.form-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px; /* Largura máxima */
+    margin: auto; /* Centralizar a div */
+    padding: 20px;
+    /*border: 1px solid #ccc;*/
+}
+
+    .form-container label {
+        margin-bottom: 5px; /* Ajuste a margem inferior conforme necessário */
+    }
+
+    .form-container input {
+        padding: 5px;
+        margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
+    }
+
+    .form-container select{
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .form-container div{
+        display: flex;
+    }
+
+.buttonDiv{
+    margin: auto;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .buttonDiv button{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+.label-container{
+    min-width: 75px;
+}
+
+#accTable {
+    width: 500px; /* Largura fixa da área */
+    height: 400px; /* Altura fixa da área */
+    overflow: auto; /* Adiciona barras de rolagem quando necessário */
+    border: 1px solid #ccc; /* Adiciona uma borda para melhor visualização */
+}
+
+#accTable table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#accTable th, td {
+    border: 1px solid #ddd; /* Adiciona bordas às células */
+    padding: 8px; /* Adiciona espaçamento interno às células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+#accTable th {
+    background-color: #f2f2f2; /* Adiciona uma cor de fundo para o cabeçalho */
+}
+
