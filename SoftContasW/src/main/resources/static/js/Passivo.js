@@ -10,7 +10,7 @@ const natureza = document.getElementById("natureza");
 const grupo = document.getElementById("grupo");
 
 //form
-const meuForm = document.querySelector(".form-container");
+const meuForm = document.getElementById("formConta");
 
 
 function saveClick(){
@@ -20,6 +20,7 @@ function saveClick(){
         console.log("saldo: " + saldo.value);
         console.log("natureza: " + natureza.value);
         console.log("grupo: " + grupo.value);
+        window.location.href = 'http://localhost:8080/contas/adicionar-conta';
     }else{
         console.log('dados inválidos');
     }
@@ -40,18 +41,18 @@ function validateClick(){
 }
 
 function backClick(){
-    console.log("Voltando...")
+    console.log("Voltando...");
+    window.location.href = 'http://localhost:8080/registra';
     
 }
 
 saveButton.addEventListener("click", saveClick);
 validateButton.addEventListener("click", validateClick);
 backButton.addEventListener("click", backClick);
-meuForm.addEventListener("submit", (event) => { event.preventDefault(); });
 
 
 function nameValidate(input){
-    if(/[a-zA-Z]+/.test(input.value)){
+    if(/^[a-zA-ZÀ-ÿ\s]+/.test(input.value)){
         input.setCustomValidity("");
         return true;
     }else{
@@ -61,7 +62,7 @@ function nameValidate(input){
 }
 
 function saldoValidate(input){
-    if(/^\d+(,\d{1,2})?$/.test(input.value)){
+    if(/^\d+(.\d{1,2})?$/.test(input.value)){
         input.setCustomValidity("");
         return true;
     }else{

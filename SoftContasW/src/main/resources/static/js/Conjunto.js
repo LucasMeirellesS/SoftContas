@@ -7,6 +7,7 @@ const loadButton = document.getElementById("load");
 
 function save(){
     console.log("save");
+    window.location.href = 'http://localhost:8080/contas/adicionar-conta';
 }
 
 function validateAcc(){

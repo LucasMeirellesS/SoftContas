@@ -17,17 +17,24 @@
                     <table style="border: 1px solid #ccc;">
                         <thead style="border: 1px solid;">
                             <tr>
+                                <th>ID</th>
                                 <th>Nome</th>
                                 <th>Saldo</th>
                                 <th>Natureza</th>
                                 <th>Grupo</th>
                                 <th>Sub-Grupo</th>
+                                <th>Tipo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
+                            <tr th:each="conta : ${listarContas}">
+                                <td th:text="${conta.id}"></td>
+                                <td th:text="${conta.nome}"></td>
+                                <td th:text="${conta.saldo}"></td>
+                                <td th:text="${conta.natureza}"></td>
+                                <td th:text="${conta.grupo}"></td>
+                                <td th:text="${conta.subgrupo}"></td>
+                                <td th:text="${conta.tipo}"></td>
                             </tr>
                         </tbody>
                     </table>

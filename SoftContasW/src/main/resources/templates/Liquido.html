@@ -13,20 +13,20 @@
         <div class="conteinerCentral">
             <h2>Patrimônio Líquido</h2>
             <div class="conteinerCentral" >
-                <form class="form-container">
+                <form id="formConta" th:action="@{/adicionar-conta-pl}" th:object="${conta}" method="POST">
                     
                     <div>
                         <div class="label-container">
                             <label for="nome">Nome:</label>
                         </div>
-                        <input id="nome" pattern="[a-zA-Z]+"></input>
+                        <input id="nome"  type="text" class="form-control" th:field="${conta.nome}"></input>
                     </div>
 
                     <div>
                         <div class="label-container">
                             <label for="saldo">Saldo:</label>
                         </div>
-                        <input id="saldo" pattern="^\d+(,\d{1,2})?$"></input>
+                        <input id="saldo" type="text" class="form-control" th:field="${conta.saldo}"></input>
                     </div>
                     
                     <div>
@@ -34,7 +34,7 @@
                             <label for="natureza">Natureza:</label>
                         </div>
                         
-                        <select name="natureza" id="natureza">
+                        <select name="natureza" id="natureza" type="text" class="form-control" th:field="${conta.natureza}">
                             <option value="D">D</option>
                             <option value="C">C</option>
                         </select>
@@ -45,14 +45,15 @@
                         <div class="label-container">
                             <label for="grupo">Grupo:</label>
                         </div>
-                        <select name="grupo" id="grupo">
-                            <option value="circulante">Circulante</option>
-                            <option value="naoCirculante">Não Circulante</option>
-                        </select>
+                        <input name="grupo" id="grupo" type="text" class="form-control" th:field="${conta.grupo}"></input>
+                    </div>
+                    
+                    <div>
+                        <input name="tipo" id="tipo" type="text" class="form-control" th:field="${conta.tipo}" style="display: none;">Patrimonio Líquido</<input>
                     </div>
                     
                     <div class="buttonDiv">
-                        <button id="save">Salvar</button>
+                        <button id="save" type="submit" class="btn btn-primary">Salvar</button>
                         <button id="validate">Validar</button>
                         <button id="back">Voltar</button>
                     </div>

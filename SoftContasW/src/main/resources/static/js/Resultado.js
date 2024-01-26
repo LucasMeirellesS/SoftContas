@@ -10,7 +10,7 @@ const natureza = document.getElementById("natureza");
 const grupo = document.getElementById("grupo");
 
 //form
-const meuForm = document.querySelector(".form-container");
+const meuForm = document.getElementById("formConta");
 
 
 function saveClick(){
@@ -33,20 +33,20 @@ function validateClick(){
 }
 
 function backClick(){
-    console.log("Voltando...")
+    console.log("Voltando...");
+    window.location.href = 'http://localhost:8080/registra';
     
 }
 
 saveButton.addEventListener("click", saveClick);
 validateButton.addEventListener("click", validateClick);
 backButton.addEventListener("click", backClick);
-meuForm.addEventListener("submit", (event) => { event.preventDefault(); });
 
 nome.addEventListener('change', (event) => {nameValidate(nome)});
 
 //console.log(nome.attributes);
 function nameValidate(input){
-    if(/[a-zA-Z]+/.test(input.value)){
+    if(/^[a-zA-ZÀ-ÿ\s]+/.test(input.value)){
         input.setCustomValidity("");
         return true;
     }else{
@@ -56,7 +56,7 @@ function nameValidate(input){
 }
 
 function saldoValidate(input){
-    if(/^\d+(,\d{1,2})?$/.test(input.value)){
+    if(/^\d+(.\d{1,2})?$/.test(input.value)){
         input.setCustomValidity("");
         return true;
     }else{
