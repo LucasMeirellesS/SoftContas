@@ -46,8 +46,8 @@
                             <label for="grupo">Grupo:</label>
                         </div>
                         <select name="grupo" id="grupo" type="text" class="form-control" th:field="${conta.grupo}">
-                            <option value="receita">Receita</option>
-                            <option value="despesa">Despesa</option>
+                            <option value="receitas">Receita</option>
+                            <option value="despesas">Despesa</option>
                         </select>
                     </div>
                     
@@ -55,10 +55,15 @@
                         <input name="tipo" id="tipo" type="text" class="form-control" th:field="${conta.tipo}" style="display: none;">Resultado</<input>
                     </div>
                     
+                    <div>
+                        <p name="tipo" id="tipo" type="text" class="form-control" th:text="${mensagemValidacao}" value="validacao"></<p>
+                    </div>
+                    
+                    
                     <div class="buttonDiv">
                         <button id="save" type="submit" class="btn btn-primary">Salvar</button>
-                        <button id="validate">Validar</button>
-                        <button id="back">Voltar</button>
+                        <!--<button id="validate">Validar</button>-->
+                        <button class="btn btn-primary" id="back">Voltar</button>
                     </div>
                 </form>
             </div>

@@ -47,8 +47,8 @@
                             <label for="grupo">Grupo:</label>
                         </div>
                         <select name="grupo" id="grupo" type="text" class="form-control" th:field="${conta.grupo}">
-                            <option value="circulante">Circulante</option>
-                            <option value="naoCirculante">Não Circulante</option>
+                            <option value="ativo circulante">Circulante</option>
+                            <option value="ativo não circulante">Não Circulante</option>
                         </select>
                     </div>
                     
@@ -62,11 +62,15 @@
                     <div>
                         <input name="tipo" id="tipo" type="text" class="form-control" th:field="${conta.tipo}" value="Ativo" style="display: none;"></<input>
                     </div>
-
+                    
+                    <div>
+                        <p name="tipo" id="tipo" type="text" class="form-control" th:text="${mensagemValidacao}" value="validacao"></<p>
+                    </div>
+                    
                     <div class="buttonDiv">
                         <button id="save" type="submit" class="btn btn-primary">Salvar</button>
-                        <button id="validate">Validar</button>
-                        <button id="back">Voltar</button>
+                        
+                        <a th:href="@{/}" id="back" class="btn btn-primary">Voltar</a>
                     </div>
                 </form>
                 

@@ -29,6 +29,15 @@ function validateClick(){
     console.log("grupo: " + grupo.value);
 }
 
+function handleSubmit(event){
+    var botao = document.activeElement;
+    if(botao.tagName === 'BUTTON'){
+        if(botao.id === 'back'){
+            event.preventDefault();
+        }
+    }
+}
+
 function backClick(){
     console.log("Voltando...");
     window.location.href = 'http://localhost:8080/registra';
@@ -38,7 +47,7 @@ function backClick(){
 saveButton.addEventListener("click", saveClick);
 validateButton.addEventListener("click", validateClick);
 backButton.addEventListener("click", backClick);
-
+meuForm.addEventListener("submit", (event) => {handleSubmit(event);});
 
 
 function nameValidate(input){

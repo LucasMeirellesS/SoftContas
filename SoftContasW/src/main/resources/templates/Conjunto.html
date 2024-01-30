@@ -35,20 +35,33 @@
                                 <td th:text="${conta.grupo}"></td>
                                 <td th:text="${conta.subgrupo}"></td>
                                 <td th:text="${conta.tipo}"></td>
+                                <td> <a th:href="@{/validarConta2/{id}(id=${conta.id})}" class="btn btn-primary" onclick="mostrarPopup()">Validar</a> 
+                                            <a th:href="@{'/deletar-conta/' + ${conta.id}}" class="btn btn-danger">Excluir</a>
+                                     
+                                      </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="buttonDiv">
-                <button id="balanceValidate">Validar Balanço</button>
-                <button id="accValidate">Validar Contas</button>
-                <button id="save">Salvar</button>
-                <button id="load">Carregar</button>
-                <button id="back">Voltar</button>
+                <a th:href="@{/valida-balanco}" id="balanceValidate" class="btn btn-primary" onclick="mostrarPopup()">Validar Balanço</a>
+                
+                
+                <button class="btn btn-primary" id="back">Voltar</button>
             </div>
         </div>
+        <div id="meuPopup" th:style="${popupStyle}">
+            <h2>Validação</h2>
+            <p th:text="${msg}"></p>
+            <button onclick="fecharPopup()">Fechar Popup</button>
+        </div>
     </div>
+     
+    
 </body>
 <script th:src="@{/js/Conjunto.js}"></script>
+<script th:src="@{/js/popup.js}"></script>
+
+
 </html>

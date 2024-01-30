@@ -1,11 +1,9 @@
 //botoes
 const saveButton = document.getElementById("save");
-const validateButton = document.getElementById("validate");
 const backButton = document.getElementById("back");
 
 document.addEventListener("DOMContentLoaded", function() {
     const saveButton = document.getElementById("save");
-    const validateButton = document.getElementById("validate");
     const backButton = document.getElementById("back");
 
     //inputs
@@ -30,35 +28,31 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("sub-grupo: " + subGrupo.value);
             window.location.href = 'http://localhost:8080/contas/adicionar-conta';
         }else{
-            console.log("Dados inválidos")
+            console.log("Dados inválidos");
         }
         
     }
 
-    function validateClick(){
-        if(nameValidate(nome) && saldoValidate(saldo) && subGrupoValidate(subGrupo)){
-            console.log("Validando:")
-            console.log("nome: " + nome.value);
-            console.log("saldo: " + saldo.value);
-            console.log("natureza: " + natureza.value);
-            console.log("grupo: " + grupo.value);
-            console.log("sub-grupo: " + subGrupo.value);
-        }else{
-            console.log("Dados inválidos")
+    
+    
+    function handleSubmit(event){
+        var botao = document.activeElement;
+        if(botao.tagName === 'BUTTON'){
+            if(botao.id === 'back'){
+                event.preventDefault();
+            }
         }
-        
     }
-
-    function backClick(){
+    
+    function backClick(event){
         console.log("Voltando...");
         window.location.href = 'http://localhost:8080/registra';
         
     }
 
     saveButton.addEventListener("click", saveClick);
-    validateButton.addEventListener("click", validateClick);
-    backButton.addEventListener("click", backClick);
-
+    backButton.addEventListener("click", (event) => {backClick(event);});
+    meuForm.addEventListener("submit", (event) => {handleSubmit(event);});
     function nameValidate(input){
         if(/^[a-zA-ZÀ-ÿ\s]+$/.test(input.value)){
             input.setCustomValidity("");    

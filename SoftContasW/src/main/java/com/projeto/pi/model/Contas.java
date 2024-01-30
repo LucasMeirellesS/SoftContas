@@ -1,64 +1,32 @@
-package com.projeto.pi.data;
+package com.projeto.pi.model;
 
-import jakarta.persistence.Entity; 
+import com.projeto.pi.data.MostraAtributos;
 
-import jakarta.persistence.GeneratedValue; 
-
-import jakarta.persistence.GenerationType; 
-
-import jakarta.persistence.Id; 
-
-import jakarta.persistence.Table; 
-
-import jakarta.validation.constraints.Email; 
-
-import jakarta.validation.constraints.NotBlank; 
-
-import jakarta.validation.constraints.NotNull; 
-
-import jakarta.validation.constraints.Size; 
-
-import lombok.Data; 
-
-import org.hibernate.validator.constraints.br.CPF;
-
-@Data
-@Entity
-@Table(name="Contas_salvas")
-
-
-public class ContasEntity implements  MostraAtributos{
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+public class Contas implements MostraAtributos{
+   
     private String tipo;
     private String nome;
     private double saldo;
     private String natureza;
     private String grupo;
-    private String subgrupo = null;
+    private String subgrupo;
     
-    public ContasEntity(){
+    public Contas(){
     }
     
-    public ContasEntity(String nome, double saldo, String natureza, String grupo){
+    public Contas(String nome, double saldo, String natureza, String grupo){
         this.nome = nome;
         this.saldo = saldo;
         this.natureza = natureza;
         this.grupo = grupo;
     }
     
-    public ContasEntity(String nome, double saldo, String natureza, String grupo, String subgrupo){
+    public Contas(String nome, double saldo, String natureza, String grupo, String subgrupo){
         this.nome = nome;
         this.saldo = saldo;
         this.natureza = natureza;
         this.grupo = grupo;
         this.subgrupo = subgrupo;
-    }
-    
-    
-    public void setId(Integer id){
-        this.id = id;
     }
     
     public String getTipo() {
@@ -111,5 +79,5 @@ public class ContasEntity implements  MostraAtributos{
     
     @Override
     public void mostraAtributos(){}
-
+    
 }
