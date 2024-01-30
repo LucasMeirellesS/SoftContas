@@ -19,4 +19,3 @@
 
 •	Validação de contas em seus devidos grupos: o programa irá comparar a conta cadastrada com as contas existentes no plano de contas contido no banco de dados que será criado para o programa, caso esteja incorreto, o programa perguntará se o usuário deseja tentar colocar a conta no grupo certo ele mesmo ou se deseja que o programa corrija automaticamente. Caso o usuário erre a correção, o programa irá relatar erro até que o usuário coloque a conta no grupo certo ou escolha a opção de correção automática.
  
-•	Salvar os dados apresentados em arquivo de texto: usuário poderá salvar os dados apresentados em um arquivo de texto do formato de sua preferência e imprimir, para o caso de análise daquele registro em situação posterior ou para envio a terceiros.
